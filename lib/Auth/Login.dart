@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
               children: [
               const Text("Already have an account?" ,style: TextStyle(color: Colors.white) ,),
               SizedBox(width: Adaptive.w(2),),
-              const Text("Log In?" ,style: TextStyle(color: Color(0xFF872A2A)) ,),
+              const Text("Log In" ,style: TextStyle(color: Color(0xFF872A2A)) ,),
               ],
             )
         ),

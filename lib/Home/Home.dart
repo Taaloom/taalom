@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Timer(
-        const Duration(milliseconds: 1000),
+        const Duration(milliseconds: 500),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => const Login())));
 

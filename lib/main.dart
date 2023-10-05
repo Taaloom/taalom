@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
             splashTransition: SplashTransition.scaleTransition,
             pageTransitionType: PageTransitionType.bottomToTop,
             splashIconSize: 250,
-            duration: 4000,
+            duration: 2000,
           ));
     });
   }
