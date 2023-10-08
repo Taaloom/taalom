@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>257261061194-sp8ujb9k8g847e91cqf990hjftodb1dh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.257261061194-sp8ujb9k8g847e91cqf990hjftodb1dh</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>257261061194-7kj8kg75ji9vdq7fsdfiq9d0h6rg6vnu.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCOudAwBZwYX725OAeIq3zuV8zVRUahgIY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>257261061194</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.taalom</string>
+	<key>PROJECT_ID</key>
+	<string>taaloom</string>
+	<key>STORAGE_BUCKET</key>
+	<string>taaloom.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:257261061194:ios:1d20f89f118babc50ad2b3</string>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "257261061194",
+    "project_id": "taaloom",
+    "storage_bucket": "taaloom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257261061194:android:896db175a4dd9b5f0ad2b3",
+        "android_client_info": {
+          "package_name": "com.example.taalom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257261061194-7kj8kg75ji9vdq7fsdfiq9d0h6rg6vnu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.taalom",
+            "certificate_hash": "5e33cdb5ae7dabfb359405ae799190b31d67806d"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_lOnFWrEr18V5qNMJrYbLuiMjUXO5mmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257261061194-qok4aqhj3s97m1d2gcj3fpu5alguepf0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.taaloom"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

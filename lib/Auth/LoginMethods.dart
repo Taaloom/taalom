@@ -1,11 +1,17 @@
 import 'dart:async';
 
 import 'package:auth_buttons/auth_buttons.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:material_dialogs/dialogs.dart';
+import 'package:material_dialogs/widgets/buttons/icon_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:taalom/services/auth_service.dart';
 
 class LoginMethods extends StatefulWidget {
   const LoginMethods({super.key});
@@ -21,7 +27,6 @@ class _LoginMethodsState extends State<LoginMethods> {
   void initState() {
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -215,7 +220,88 @@ class _LoginMethodsState extends State<LoginMethods> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               GoogleAuthButton(
-                                onPressed: () {},
+                                onPressed: () async {
+                                  try {
+                                    UserCredential userCredential = await  AuthService().signInWithGoogle();
+                                    var userName = userCredential.user?.displayName;
+                                    var Email  = userCredential.user?.email;
+                                    //var Phone  = userCredential.user?.phoneNumber;
+
+                                    showDialog(context: context,
+                                        builder: (BuildContext context) {
+                                      return MaterialButton(
+                                        color: Colors.grey[300],
+                                        minWidth: 300,
+                                        onPressed: () => {},
+                                        child: Column(
+                                          children: [
+                                            Spacer(),
+                                            SizedBox(
+                                              width: Adaptive.w(50),
+                                              child: Lottie.asset(
+                                                'assets/driving.json',
+                                                fit: BoxFit.contain,
+                                              ),
+                                            ),
+                                            SizedBox(height: Adaptive.h(2),),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Text("Hi "),
+                                                Text(userName! , style: TextStyle(color: Color(0xFF872A2A)),),
+                                              ],
+                                            ),
+                                            SizedBox(height: Adaptive.h(2),),
+                                            Text("You have been logged in successfully"),
+                                            SizedBox(height: Adaptive.h(2),),
+                                            Text("Your logged Email is"),
+                                            SizedBox(height: Adaptive.h(2),),
+                                            Text(Email! , style: TextStyle(color: Color(0xFF872A2A)),) ,
+                                            SizedBox(height: Adaptive.h(2),),
+                                            Spacer(),
+                                            SizedBox(
+                                              width: Adaptive.w(80),
+                                              child: ElevatedButton(
+                                                onPressed:() async {
+//                                                  AuthService().signOut();
+                                                  await GoogleSignIn().signOut();
+                                                  Navigator.pop(context);
+                                                },
+                                                style:  ButtonStyle(
+                                                  backgroundColor: MaterialStateProperty.all(
+                                                      const Color(0xFF872A2A)
+                                                  ),
+                                                  shape: MaterialStateProperty.all(
+                                                    RoundedRectangleBorder(
+                                                      // Change your radius here
+                                                      borderRadius: BorderRadius.circular(16),
+                                                    ),
+                                                  ),
+                                                ),
+                                                child: const Text('LogOut' ,style: TextStyle(color: Colors.white) ,),
+                                              ),
+                                            ),
+                                           // Text(Phone!),
+                                            Spacer()
+
+
+
+                                          ],
+                                        ),);
+                                    });
+
+                                    if (kDebugMode) {
+                                      print( "userCredential.phoneNumber");
+                                      print(userCredential.user?.toString());
+                                      print( "userCredential.phoneNumber");
+                                    }
+
+                                  } catch (error) {
+                                    print( "Omqn");
+                                    print(error );
+                                    print( "Omqn");
+                                  }
+                                },
                                 style: const AuthButtonStyle(
                                   borderRadius: 100,
                                   buttonType: AuthButtonType.icon,
@@ -251,7 +337,6 @@ class _LoginMethodsState extends State<LoginMethods> {
                               ],
                             )
                         ),
-                        SizedBox( height: Adaptive.h(3),)
 
                       ],)
                   ],
